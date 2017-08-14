@@ -2,6 +2,7 @@
   "name": "currency-exchange-rates",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://laurids-reichardt.github.io/Currency-Exchange-Rates/",
   "dependencies": {
     "axios": "^0.16.2",
     "moment": "^2.18.1",
