@@ -1,6 +1,8 @@
 # Currency-Exchange-Rates
 Conveniently look up current foreign exchange rates and convert from one to another currency.
 
+![alt text for screenshot](https://github.com/laurids-reichardt/Currency-Exchange-Rates/raw/master/Screenshot.png)
+
 ## Frameworks used
 
 - React
