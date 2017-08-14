@@ -14,9 +14,9 @@ import ImplementationInfo from './components/ImplementationInfo';
 import Footer from './components/Footer';
 
 // utility component imports
-import DefaultState from './utils/DefaultState';
-import DropdownOptions from './utils/DropdownOptions';
-import ExchangeRateData from './utils/ExchangeRateData';
+import DefaultState from './utilities/DefaultState';
+import DropdownOptions from './utilities/DropdownOptions';
+import ExchangeRateData from './utilities/ExchangeRateData';
 
 class App extends Component {
   constructor(props) {
