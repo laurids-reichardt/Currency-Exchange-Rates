@@ -2,7 +2,7 @@
 Conveniently look up current foreign exchange rates and convert from one to another currency. [Live Demo](https://laurids-reichardt.github.io/Currency-Exchange-Rates/)
 
 <p align="center">
-  <img width="460" src="https://github.com/laurids-reichardt/Currency-Exchange-Rates/raw/master/Screenshot.png">
+  <img width="420" src="https://github.com/laurids-reichardt/Currency-Exchange-Rates/raw/master/demo-screenshot.png">
 </p>
 
 ## Frameworks used

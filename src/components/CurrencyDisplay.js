@@ -9,11 +9,7 @@ function outputString(amount, currency) {
 }
 
 const CurrencyDisplay = props => {
-  return (
-    <span>
-      {outputString(props.amount, props.currency)}
-    </span>
-  );
+  return <span>{outputString(props.amount, props.currency)}</span>;
 };
 
 export default CurrencyDisplay;

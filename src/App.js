@@ -26,8 +26,12 @@ class App extends Component {
     this.state = DefaultState;
 
     // bind handler functions to the App component
-    this.handleSourceCurrencyChange = this.handleSourceCurrencyChange.bind(this);
-    this.handleTargetCurrencyChange = this.handleTargetCurrencyChange.bind(this);
+    this.handleSourceCurrencyChange = this.handleSourceCurrencyChange.bind(
+      this
+    );
+    this.handleTargetCurrencyChange = this.handleTargetCurrencyChange.bind(
+      this
+    );
     this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handleIconClick = this.handleIconClick.bind(this);
   }
@@ -59,7 +63,10 @@ class App extends Component {
   // handler functions - handle input changes from the input field, dropdowns and switch button
 
   handleSourceCurrencyChange(event, data) {
-    this.setState({ sourceCurrency: data.value }, this.updateTargetCurrencyOptions);
+    this.setState(
+      { sourceCurrency: data.value },
+      this.updateTargetCurrencyOptions
+    );
   }
 
   handleTargetCurrencyChange(event, data) {
@@ -67,7 +74,10 @@ class App extends Component {
   }
 
   handleAmountChange(event, data) {
-    this.setState({ amount: Number(data.value), input: data.value }, this.updateResult);
+    this.setState(
+      { amount: Number(data.value), input: data.value },
+      this.updateResult
+    );
   }
 
   handleIconClick() {
@@ -82,7 +92,9 @@ class App extends Component {
   updateTargetCurrencyOptions() {
     this.setState(
       {
-        targetCurrencyOptions: this.state.utils.dropdownOptions.getTargetCurrencyOptions(this.state.sourceCurrency)
+        targetCurrencyOptions: this.state.utils.dropdownOptions.getTargetCurrencyOptions(
+          this.state.sourceCurrency
+        )
       },
       this.updateTargetCurrency
     );
@@ -105,7 +117,11 @@ class App extends Component {
   updateResult() {
     this.setState(
       {
-        result: this.state.utils.fx.get(this.state.sourceCurrency, this.state.targetCurrency, this.state.amount)
+        result: this.state.utils.fx.get(
+          this.state.sourceCurrency,
+          this.state.targetCurrency,
+          this.state.amount
+        )
       },
       this.updateChartData
     );
@@ -114,7 +130,10 @@ class App extends Component {
   // update chart data
   updateChartData() {
     this.setState({
-      chartData: this.state.utils.fx.getChartData(this.state.sourceCurrency, this.state.targetCurrency)
+      chartData: this.state.utils.fx.getChartData(
+        this.state.sourceCurrency,
+        this.state.targetCurrency
+      )
     });
   }
 
@@ -133,7 +152,10 @@ class App extends Component {
             <Grid.Row>
               <Grid.Column>
                 {/* allows the user to insert the desired amount of currency */}
-                <AmountInput value={this.state.input} onChange={this.handleAmountChange} />
+                <AmountInput
+                  value={this.state.input}
+                  onChange={this.handleAmountChange}
+                />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -147,7 +169,11 @@ class App extends Component {
               </Grid.Column>
               <Grid.Column textAlign="center" verticalAlign="middle" width={2}>
                 {/* icon button that allows to switches the source and target currency */}
-                <Icon name="exchange" size="large" onClick={this.handleIconClick} />
+                <Icon
+                  name="exchange"
+                  size="large"
+                  onClick={this.handleIconClick}
+                />
               </Grid.Column>
               <Grid.Column width={7}>
                 {/* dropdown element to select the target currency */}
@@ -167,7 +193,11 @@ class App extends Component {
             <Grid.Row>
               <Grid.Column width={7}>
                 <Segment color="red">
-                  {' '}<CurrencyDisplay currency={this.state.sourceCurrency} amount={this.state.amount} />{' '}
+                  {' '}
+                  <CurrencyDisplay
+                    currency={this.state.sourceCurrency}
+                    amount={this.state.amount}
+                  />{' '}
                 </Segment>
               </Grid.Column>
               <Grid.Column width={2}>
@@ -175,7 +205,11 @@ class App extends Component {
               </Grid.Column>
               <Grid.Column width={7}>
                 <Segment color="green">
-                  {' '}<CurrencyDisplay currency={this.state.targetCurrency} amount={this.state.result} />{' '}
+                  {' '}
+                  <CurrencyDisplay
+                    currency={this.state.targetCurrency}
+                    amount={this.state.result}
+                  />{' '}
                 </Segment>
               </Grid.Column>
             </Grid.Row>
